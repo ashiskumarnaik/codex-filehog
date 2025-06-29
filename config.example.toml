@@ -1,0 +1,41 @@
+# FileHog Configuration Example
+# Copy this file to config.toml and modify as needed
+
+# Target folder containing files to be stored
+target_folder = "/path/to/target"
+
+# Output folder for metadata and logs
+output_folder = "/path/to/output"
+
+# Output structure: "flattened" or "structured"
+# - flattened: Single JSON file with all file records
+# - structured: Separate JSON file for each original file
+output_structure = "structured"
+
+# Codex API endpoints (can specify multiple for load balancing)
+codex_endpoints = [
+    "http://localhost:8080",
+]
+
+# Storage parameters
+[storage_params]
+# Price per byte per second in TSTWEI
+price = 1000    # tokens per slot per second
+
+# Number of storage nodes
+nodes = 10
+
+# Fault tolerance (number of nodes that can fail)
+tolerance = 5
+
+# Proof probability (0-100)
+proof_probability = 100
+
+# Duration in days (minimum 1)
+duration_days = 6
+
+# Expiry in minutes (minimum 15, must be less than duration)
+expiry_minutes = 60
+
+# Collateral requirement per byte in TSTWEI
+collateral = 1
